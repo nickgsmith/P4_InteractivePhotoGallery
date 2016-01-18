@@ -59,7 +59,7 @@ header {
   width: 100%;
   height: 100%;
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.85);
   top:0;
   left:0;
   display: none;
@@ -69,15 +69,26 @@ header {
 
 #overlay img {
   max-width: 680px;
-  margin-bottom: 50px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  margin-top: 10px;
 }
 
 #caption {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px;
   color: white;
   font-weight: normal;
   max-width: 600px;
   margin: 0 auto;
+}
+
+#clickToClose {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  color: white;
 }
 
 .clearfix:before,
@@ -88,6 +99,28 @@ content: " ";
 
 .clearfix:after {
 clear: both;
+}
+
+#nextButton,
+#prevButton {
+  display: inline-block;
+  width:60px;
+  height: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 2px;
+  border : none;
+  background-color: rgba(29, 85, 119, 0.5);
+  color: white;
+}
+
+#nextButton:hover,
+#prevButton:hover {
+  background-color: rgba(29, 85, 119, 0.9);
+}
+
+#clickToClose {
+  cursor: pointer;
 }
 
 /*****************************
@@ -116,10 +149,10 @@ RESPONSIVE SECTION
 }
 
 .gallery ul li:nth-of-type(4n+1) {
-  margin-left: 0
+  margin-left: 0;
 }
 .gallery ul li:nth-of-type(4n+4) {
-  margin-right: 0
+  margin-right: 0;
 }
 
 }
