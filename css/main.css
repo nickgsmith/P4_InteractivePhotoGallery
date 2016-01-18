@@ -81,7 +81,7 @@ header {
   color: white;
   font-weight: normal;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
 }
 
 #clickToClose {
@@ -123,6 +123,19 @@ clear: both;
   cursor: pointer;
 }
 
+#originalImage {
+  background-color: rgba(29, 85, 119, 0.5);
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 2px;
+  border : none;
+}
+
+#originalImage:hover {
+  background-color: rgba(29, 85, 119, 0.9);
+}
+
 /*****************************
 RESPONSIVE SECTION
 ******************************/
@@ -151,6 +164,7 @@ RESPONSIVE SECTION
 .gallery ul li:nth-of-type(4n+1) {
   margin-left: 0;
 }
+
 .gallery ul li:nth-of-type(4n+4) {
   margin-right: 0;
 }
