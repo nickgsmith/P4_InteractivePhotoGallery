@@ -17,7 +17,7 @@
   $overlay.append($downloadLink);
   $overlay.append($clickToClose);
 
-  $(".gallery a").click(function(event){
+  $(".gallery a[class='image']").click(function(event){
     event.preventDefault();
     var imagelocation = $(this).attr("href");
     $selectedImage.attr("src", imagelocation).attr("width", "90%");
@@ -28,23 +28,27 @@
     $nextButton.text('NEXT')
     $downloadLink.text('DOWNLOAD ORIGINAL IMAGE')
     $overlay.show();
+    $overlay.addClass("fadeIn");
   });
 
   $("#clickToClose").click(function(){
     $overlay.hide();
   })
+
 //END - Overlay Section
 
 //START - Search Section
   $('#searchBox').keyup(function(){
      var searchValue = $(this).val().toLowerCase();
+
      $('#galleryUl li').each(function(){
         // Get caption alt text
         var $caption = $(this).children("a").children("img").attr("alt");
-          $(this).removeAttr("class");
+
         if($caption.indexOf(searchValue) !=-1) {
           $(this).css("display", "inline-block");
           $(this).attr("class", "inResult");
+
         } else {
           $(this).attr("class", "notInResult");
           $(this).css("display", "none");
@@ -62,6 +66,11 @@
       $list = $('#galleryUl li[class="inResult"]')[4]; $($list).css("margin-left", "0").css("margin-right", "30px");
       $list = $('#galleryUl li[class="inResult"]')[8]; $($list).css("margin-left", "0").css("margin-right", "30px");
       $list = $('#galleryUl li[class="inResult"]')[12]; $($list).css("margin-left", "0").css("margin-right", "30px");
+
+     $('#galleryUl li[class="inResult"]').hide();
+     $('#galleryUl li[class="inResult"]').addClass("fadeInUp");
+     $('#galleryUl li[class="inResult fadeInUp"]').show();
+
 });
 //END - Search Section
 
@@ -115,4 +124,31 @@ $("#prevButton").click(prev_func);
         next_func();
   });
 
+  $(document).keydown(function(e){
+      if (e.keyCode == 27)
+    $overlay.hide();
+  });
+
 //END - Nav Buttons
+
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('ytplayer', {
+        events: {
+            'onReady': onPlayerReady
+        }
+    });
+}
+
+function onPlayerReady() {
+    player.playVideo();
+    // Mute!
+    player.mute();
+}
