@@ -56,8 +56,16 @@ body {
 }
 
 h1 {
-  padding-bottom: 20px;
-  border: thin solid black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 30px;
+  border: thin solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  color: white;
+  font-size: 24px;
+  text-transform: uppercase;
+  box-shadow: rgba(0, 0, 0, 0.1) 2px 2px 2px;
+  background-color: rgba(29, 85, 119, 0.8);
 }
 
 .gallery ul {

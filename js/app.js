@@ -71,6 +71,7 @@
      $('#galleryUl li[class="inResult"]').addClass("fadeInUp");
      $('#galleryUl li[class="inResult fadeInUp"]').show();
 
+
 });
 //END - Search Section
 
