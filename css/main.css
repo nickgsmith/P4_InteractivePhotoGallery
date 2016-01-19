@@ -47,7 +47,7 @@ body {
   width: 100%;
 }
 
-.gallery {
+.imageGallery {
   width:95%;
   height: 100%;
   text-align: center;
@@ -68,11 +68,11 @@ h1 {
   background-color: rgba(29, 85, 119, 0.8);
 }
 
-.gallery ul {
+.imageGallery ul {
   list-style: none;
 }
 
-.gallery ul li {
+.imageGallery ul li {
   display: inline-block;
   margin: 0 30px 40px 30px;
   width: 200px;
@@ -137,6 +137,7 @@ clear: both;
   border : none;
   background-color: rgba(29, 85, 119, 0.5);
   color: white;
+  z-index: 1000;
 }
 
 #nextButton:hover,
@@ -202,7 +203,7 @@ RESPONSIVE SECTION
 
 @media (min-width: 992px) {
 
-.gallery {
+.imageGallery {
     width: 980px;
 }
 
@@ -210,22 +211,22 @@ RESPONSIVE SECTION
   width: 70%;
 }
 
-.gallery ul li {
+.imageGallery ul li {
   float: left;
   margin: 0 30px 40px 30px;
   width: 200px;
   height: 200px;
 }
 
-.gallery ul {
+.imageGallery ul {
     width: 980px;
 }
 
-.gallery ul li:nth-of-type(4n+1) {
+.imageGallery ul li:nth-of-type(4n+1) {
   margin-left: 0;
 }
 
-.gallery ul li:nth-of-type(4n+4) {
+.imageGallery ul li:nth-of-type(4n+4) {
   margin-right: 0;
 }
 

@@ -17,16 +17,16 @@
   $overlay.append($downloadLink);
   $overlay.append($clickToClose);
 
-  $(".gallery a[class='image']").click(function(event){
+  $(".imageGallery a[class='image']").click(function(event){
     event.preventDefault();
     var imagelocation = $(this).attr("href");
     $selectedImage.attr("src", imagelocation).attr("width", "90%");
     var caption = $(this).children("img").attr("alt");
-    $caption.text(caption)
-    $clickToClose.text('Return to Gallery')
-    $prevButton.text('PREV')
-    $nextButton.text('NEXT')
-    $downloadLink.text('DOWNLOAD ORIGINAL IMAGE')
+    $caption.text(caption);
+    $clickToClose.text('Return to Gallery');
+    $prevButton.text('PREV');
+    $nextButton.text('NEXT');
+    $downloadLink.text('DOWNLOAD ORIGINAL IMAGE');
     $overlay.show();
     $overlay.addClass("fadeIn");
   });
